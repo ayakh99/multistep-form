@@ -1,0 +1,367 @@
+.wrapper {
+  height: 100%;
+  width: 100%;
+  max-width: 45rem;
+  padding-block: 4rem 1.6rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 2.3;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 3.2rem;
+  margin-bottom: 1rem;
+  color: var(--primary-900);
+}
+
+.description {
+  color: var(--neutral-600);
+  line-height: 1.6;
+}
+
+.form {
+  margin-top: 3.6rem;
+  width: 100%;
+
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  gap: 2.2rem;
+}
+
+.input_group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.desc {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.label {
+  color: var(--primary-900);
+}
+
+.label,
+.error {
+  font-size: 1.4rem;
+}
+
+.error {
+  font-weight: 700;
+  color: var(--secondary-400);
+}
+
+.buttons {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+}
+
+@media screen and (max-width: 36em) {
+  .wrapper {
+    width: calc(100% - 3.2rem);
+    background-color: var(--neutral-100);
+    border-radius: var(--border-radius-200);
+    box-shadow: 0 1rem 4rem hsla(213, 96%, 18%, 0.1);
+    padding: 4rem 2.4rem;
+    margin-top: -7.2rem;
+  }
+
+  .container {
+    flex: initial;
+    margin-bottom: 15rem;
+  }
+
+  .title {
+    font-size: 2.4rem;
+  }
+
+  .desc {
+    align-items: flex-start;
+    gap: 0.5rem;
+    flex-direction: column;
+  }
+
+  .error {
+    font-size: 1.2rem;
+    margin-bottom: 0.2rem;
+    align-self: flex-end;
+  }
+
+  .form {
+    max-width: initial;
+  }
+
+  .input_group {
+    gap: 0.5rem;
+  }
+
+  .buttons {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    padding: 1.6rem;
+    background-color: var(--neutral-100);
+  }
+}
+
+.input {
+  outline: none;
+  border: 1px solid var(--neutral-400);
+  font-size: 1.6rem;
+  padding: 1.4rem;
+  border-radius: var(--border-radius-100);
+  transition: border 0.3s;
+  cursor: pointer;
+}
+
+.input:focus,
+.input:hover {
+  border: 1px solid var(--primary-700);
+}
+
+.input:invalid {
+  border: 1px solid var(--secondary-400);
+}
+
+.form_radio {
+  display: flex;
+  gap: 1.8rem;
+}
+
+.radio_group {
+  flex: 1;
+  position: relative;
+}
+
+.radio {
+  display: none;
+}
+
+.radio_label {
+  cursor: pointer;
+}
+
+.radio_label:hover > .radio_option {
+  border: 1px solid var(--primary-700);
+}
+
+.radio:checked + .radio_label > .radio_option {
+  border: 1px solid var(--primary-700);
+  background-color: var(--neutral-200);
+}
+
+.radio_option {
+  padding: 1.6rem 1.5rem;
+  border: 1px solid var(--neutral-400);
+  border-radius: var(--border-radius-100);
+  transition: background-color 0.3s, border 0.3s;
+}
+
+.radio_icon {
+  position: relative;
+  width: 4rem;
+  height: 4rem;
+  object-fit: contain;
+  margin-bottom: 4.2rem;
+}
+
+.radio_main {
+  font-weight: 500;
+  color: var(--primary-900);
+  margin-bottom: 0.3rem;
+}
+
+.radio_sub {
+  color: var(--neutral-600);
+  font-size: 1.4rem;
+}
+
+.radio_caption {
+  display: block;
+  font-size: 1.2rem;
+  color: var(--primary-900);
+  margin-top: 1rem;
+}
+
+@media screen and (max-width: 36em) {
+  .form_radio {
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+
+  .radio_icon {
+    margin-bottom: 0;
+  }
+
+  .radio_option {
+    display: flex;
+    align-items: center;
+    gap: 1.4rem;
+  }
+}
+
+.form_checkbox {
+  position: relative;
+}
+
+.checkbox {
+  display: none;
+}
+
+.checkbox_option {
+  background-color: var(--neutral-200);
+  border-radius: var(--border-radius-100);
+  padding: 1.6rem;
+  margin-top: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2.2rem;
+}
+
+@media screen and (max-width: 36em) {
+  .checkbox_option {
+    margin-top: 0.2rem;
+  }
+}
+
+.switch {
+  width: 3.8rem;
+  height: 2rem;
+  border-radius: 2rem;
+  padding: 0.4rem;
+  background-color: var(--primary-900);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.toggle {
+  width: 1.2rem;
+  height: 1.2rem;
+  border-radius: 50%;
+  background-color: var(--neutral-200);
+  display: inline-flex;
+  transition: transform 0.3s;
+}
+
+.active,
+.inactive {
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.active {
+  color: var(--primary-900);
+}
+
+.inactive {
+  color: var(--neutral-600);
+}
+
+.checkbox:checked + label .checkbox_option .switch .toggle {
+  transform: translateX(1.8rem);
+}
+
+.checkbox:checked + label .checkbox_option .active {
+  color: var(--neutral-600);
+}
+
+.checkbox:checked + label .checkbox_option .inactive {
+  color: var(--primary-900);
+}
+
+.form_checklist {
+  gap: 1.6rem;
+}
+
+.checkitem_input {
+  display: none;
+}
+
+.checkitem {
+  display: flex;
+  align-items: center;
+  gap: 2.3rem;
+  padding: 2rem 2.3rem;
+  border: 1px solid var(--neutral-400);
+  border-radius: var(--border-radius-100);
+  cursor: pointer;
+  transition: background-color 0.3s, border 0.3s;
+}
+
+.checkitem:hover {
+  border: 1px solid var(--primary-700);
+}
+
+.checkitem_checkbox {
+  width: 2rem;
+  height: 2rem;
+  flex-shrink: 0;
+  border: 1px solid var(--neutral-400);
+  border-radius: 0.4rem;
+  transition: background-color 0.3s, border 0.3s, background-image 0.3s;
+}
+
+.checkitem_main {
+  font-weight: 500;
+  color: var(--primary-900);
+  margin-bottom: 0.5rem;
+}
+
+.checkitem_sub {
+  color: var(--neutral-600);
+  font-size: 1.4rem;
+}
+
+.checkitem_aside {
+  margin-left: auto;
+  color: var(--primary-600);
+  font-size: 1.5rem;
+}
+
+@media screen and (max-width: 36em) {
+  .checkitem {
+    padding: 1.4rem 1.5rem;
+    gap: 1.6rem;
+  }
+
+  .checkitem_main {
+    font-size: 1.4rem;
+  }
+
+  .checkitem_sub {
+    font-size: 1.2rem;
+  }
+
+  .checkitem_aside {
+    font-size: 1.3rem;
+  }
+}
+
+.checkitem_input:checked + .checkitem {
+  background-color: var(--neutral-200);
+  border: 1px solid var(--primary-700);
+}
+
+.checkitem_input:checked + .checkitem .checkitem_checkbox {
+  background-image: url('../assets/icon-checkmark.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: var(--primary-600);
+  border: 1px solid var(--primary-600);
+}

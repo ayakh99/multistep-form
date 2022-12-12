@@ -1,0 +1,41 @@
+.container {
+  padding: 0 1.6rem;
+  min-height: 100vh;
+  background-color: var(--neutral-300);
+  display: grid;
+  place-items: center;
+}
+
+.main {
+  background-color: var(--neutral-100);
+  padding: 1.6rem;
+  width: 100%;
+  max-width: 94rem;
+  height: 60rem;
+  border-radius: 1.5rem;
+  display: flex;
+  gap: 1rem;
+  box-shadow: 0 1rem 4rem hsla(213, 96%, 18%, 0.1);
+}
+
+@media screen and (max-width: 54em) {
+  .main {
+    flex-direction: column;
+    height: initial;
+  }
+}
+
+@media screen and (max-width: 36em) {
+  .container {
+    padding: 0;
+    place-items: flex-start;
+    position: relative;
+  }
+
+  .main {
+    gap: 0;
+    padding: 0;
+    box-shadow: none;
+    background-color: transparent;
+  }
+}
